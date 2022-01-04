@@ -1,0 +1,81 @@
+*
+{
+    
+}
+
+#title
+{
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
+    text-align: left;
+    
+
+}
+nav{
+    background-color: #5A21CE;
+    padding: 20px;
+}
+
+
+#Food-div
+{
+    padding: 20px;
+    width: 500px;
+    ;
+}
+
+#food-list-final
+{
+    margin-top: 20px;
+    color: Black;
+
+    border: #5A21CE 2px solid;
+    
+    
+
+}
+
+#Result-div
+{
+    width: 500px;
+    background-color: yellow;
+}
+
+#grid-div
+{
+    display: grid;  
+    grid: auto;   
+    grid-template-columns: 500px 500px;  
+    
+    grid-gap: 300px;    
+    justify-content: center;
+    padding: 20px;
+}
+
+#search-btn
+{
+    margin-left: 20px;
+}
+
+#Food-list
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.food-img
+{
+    height: 200px;
+    width: 300px;
+}
+
+.number
+{
+    width: 20px;
+}
+
+#calcount
+{
+    font-weight: bold;
+}
