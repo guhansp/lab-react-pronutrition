@@ -17,7 +17,9 @@ class FoodBox extends Component {
             {id:"g",Name:"Spinach",Calorie:100,img:"https://kfoods.com/images1/newrecipeicon/barbecue-fish_5173.jpg"},
             {id:"h",Name:"Apple",Calorie:52,img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3yN4MudiMN6L2urIHJ3CLrK7CndNqbN98J7S_1ab3Px42SWzYJ-KEL_8ktMw9UMWHTUE&usqp=CAU"},
             {id:"i",Name:"Puttu",Calorie:305,img:"https://www.vegrecipesofindia.com/wp-content/uploads/2017/11/puttu-recipe-1a-500x500.jpg"},
+            {id:"i",Name:"Cheesecake",Calorie:205,img:"https://sugarspunrun.com/wp-content/uploads/2019/01/Best-Cheesecake-Recipe-2-1-of-1-4.jpg"},
             {id:"j",Name:"Rice",Calorie:130,img:"https://www.simplyrecipes.com/thmb/j_IZxLEP2tJjonCl3s7RiGnMuxo=/2000x1331/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2020__02__HTC-White-Rice-Lead-4-e5743ee4c63a40a0aec2f3abd9f1c097.jpg"},
+
 
         ],
         searchTxt:"",
@@ -54,6 +56,14 @@ class FoodBox extends Component {
 
     }
 
+    searchf = (event) =>
+    {
+        this.setState(
+        {
+            searchTxt:event.target.value
+        })
+    }
+
     
     
     
@@ -63,12 +73,23 @@ render() {
             <div>
                 <div id='grid-div'>
                     <div id='Food-div'>
-                        <h1>Food Items</h1>               
+                        <h1>Food Items</h1>  
+
+                    <input type="text" placeholder="Find a food" onChange={this.searchf} id="search" />
+             
                         
                                                 
                         <div id='Food-list'>
                             {
-                            this.state.Food.map((item)=>
+                            this.state.Food.filter((item)=>
+                            {
+                                return item.Name.toLowerCase().includes(this.state.searchTxt)
+                            }
+                            
+                            )
+                            
+                            
+                            .map((item)=>
                             {
                                 return <div id='food-list-final'>
 
